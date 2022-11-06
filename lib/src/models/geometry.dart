@@ -5,13 +5,13 @@ class Geometry {
   const Geometry({
     this.bounds,
     required this.location,
-    required this.locationType,
+    this.locationType,
     required this.viewport,
   });
 
   final Bounds? bounds;
   final LatLngLiteral location;
-  final String locationType;
+  final String? locationType;
   final Bounds viewport;
 
   @override
@@ -23,7 +23,7 @@ class Geometry {
     return Geometry(
       bounds: map['bounds'] == null ? null : Bounds.fromMap(map['bounds']),
       location: LatLngLiteral.fromMap(map['location']),
-      locationType: map['location_type'] as String,
+      locationType: map['location_type'],
       viewport: Bounds.fromMap(map['viewport']),
     );
   }

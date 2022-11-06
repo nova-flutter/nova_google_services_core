@@ -9,7 +9,8 @@ abstract class GoogleWebService {
     required Uri baseUri,
     String? apiKey,
     this.debug = false,
-  })  : _log = Logger(serviceName),
+  })
+      : _log = Logger(serviceName),
         _apiKey = apiKey,
         _language = 'en',
         _baseUri = baseUri,
@@ -64,7 +65,7 @@ abstract class GoogleWebService {
       return data;
     } catch (error, stacktrace) {
       if (debug) {
-        _log.severe(
+        _log.warning(
           'Request failed: ${uri.toString()}',
           error,
           stacktrace,
@@ -103,5 +104,9 @@ abstract class GoogleWebService {
 
     final uri = Uri.parse('${_baseUri.toString()}/$path?$q');
     return uri;
+  }
+
+  void dispose() {
+    _httpClient.close();
   }
 }
