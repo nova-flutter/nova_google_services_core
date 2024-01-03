@@ -1,12 +1,12 @@
 name: nova_google_services_core
 description: A core set of classes to use in other nova google services packages
-version: 1.0.0
+version: 2.0.0
 repository: 'https://github.com/nova-flutter/nova_google_services_core'
 issue_tracker: 'https://github.com/nova-flutter/nova_google_services_core/issues'
 
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: '>=3.2.3 <4.0.0'
 
 dependencies:
   http: ^1.1.2
